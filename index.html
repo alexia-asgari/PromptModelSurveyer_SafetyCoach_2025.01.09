@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PromptTest Survey</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">PromptTest</div>
+    <div id="progress" class="progress">Question <span id="qIndex">1</span> of <span id="qTotal">3</span></div>
+  </header>
+
+  <main class="container">
+    <section id="nameGate" class="name-gate" aria-hidden="false">
+      <h1>Welcome</h1>
+      <p>Enter your name to begin.</p>
+      <div class="row">
+        <input id="nameInput" type="text" placeholder="Your name" autocomplete="name" />
+        <button id="startBtn" class="btn primary">Start</button>
+      </div>
+      <p class="hint">Your answers will download as a JSON file when you submit. Please Send the files to innovation@tcco.com</p>
+    </section>
+
+    <section id="app" class="app hidden" aria-hidden="true">
+      <div class="headline">
+        <h1 id="heading">Hi — Question</h1>
+        <div class="meta">
+          <button id="prevBtn" class="btn">Back</button>
+          <button id="nextBtn" class="btn primary">Next</button>
+        </div>
+      </div>
+
+      <section class="prompt">
+        <h2>Prompt</h2>
+        <div id="promptContent" class="content"></div>
+      </section>
+
+      <section class="ranker">
+        <div class="bank">
+          <div class="bank-head">
+            <h2>Responses</h2>
+            <div class="bank-sub">Drag each response onto the timeline. Click a response card to open the full prompt + response.</div>
+          </div>
+          <div id="responseBank" class="cards" aria-label="Response bank"></div>
+        </div>
+
+        <div class="timeline">
+          <h2>Timeline</h2>
+          <div class="slots" aria-label="Ranking timeline">
+            <div class="slot" data-rank="1">
+              <div class="slot-label">Best</div>
+              <div class="slot-drop" data-rank="1"></div>
+            </div>
+            <div class="slot" data-rank="2">
+              <div class="slot-label">2</div>
+              <div class="slot-drop" data-rank="2"></div>
+            </div>
+            <div class="slot" data-rank="3">
+              <div class="slot-label">3</div>
+              <div class="slot-drop" data-rank="3"></div>
+            </div>
+            <div class="slot" data-rank="4">
+              <div class="slot-label">Worst</div>
+              <div class="slot-drop" data-rank="4"></div>
+            </div>
+          </div>
+
+
+          <div class="comment-box">
+            <label for="commentInput"><strong>Comments (optional)</strong></label>
+            <textarea id="commentInput" rows="4" placeholder="Add any notes about your ranking, assumptions, or what influenced your choice..."></textarea>
+          </div>
+
+          <div class="actions">
+            <button id="resetBtn" class="btn">Reset ranking</button>
+            <button id="submitBtn" class="btn primary">Submit</button>
+          </div>
+          <div id="status" class="status" role="status" aria-live="polite"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modalOverlay" class="modal-overlay hidden" aria-hidden="true">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-title" id="modalTitle">Details</div>
+        <button id="modalClose" class="btn">Close</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>Prompt</h3>
+          <div id="modalPromptContent" class="content"></div>
+        </div>
+
+        <div class="modal-section">
+          <h3>Response</h3>
+          <div id="modalResponseContent" class="content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image lightbox -->
+  <div id="lightbox" class="lightbox hidden" aria-hidden="true">
+    <button id="lightboxClose" class="btn lightbox-close">Close</button>
+    <img id="lightboxImg" alt="Fullscreen" />
+  </div>
+
+  <script src="./data.js" defer></script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
