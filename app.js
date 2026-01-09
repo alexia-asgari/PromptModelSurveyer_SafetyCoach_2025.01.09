@@ -102,6 +102,7 @@
 
   const prevBtn = $("#prevBtn");
   const nextBtn = $("#nextBtn");
+  const nextBtnBottom = $("#nextBtnBottom");
   const resetBtn = $("#resetBtn");
   const submitBtn = $("#submitBtn");
 
@@ -205,6 +206,7 @@
     // Buttons
     prevBtn.disabled = qIndex === 0;
     nextBtn.disabled = qIndex >= total - 1;
+    if (nextBtnBottom) nextBtnBottom.disabled = qIndex >= total - 1;
     submitBtn.disabled = qIndex < total - 1; // submit on last question
 
     setStatus("Drag all four responses onto the timeline to proceed.", false);
@@ -400,6 +402,7 @@
     const total = survey.questions.length;
     if (qIndex < total - 1) {
       nextBtn.disabled = !complete;
+      if (nextBtnBottom) nextBtnBottom.disabled = !complete;
     } else {
       submitBtn.disabled = !complete;
     }
@@ -520,6 +523,7 @@
 
   prevBtn.addEventListener("click", goPrev);
   nextBtn.addEventListener("click", goNext);
+    if (nextBtnBottom) nextBtnBottom.addEventListener("click", goNext);
   resetBtn.addEventListener("click", resetRanking);
 
   submitBtn.addEventListener("click", () => {
@@ -559,6 +563,7 @@
 
       // Disable next/submit until ranked
       nextBtn.disabled = true;
+      if (nextBtnBottom) nextBtnBottom.disabled = true;
       submitBtn.disabled = true;
     } catch (e) {
       console.error(e);
