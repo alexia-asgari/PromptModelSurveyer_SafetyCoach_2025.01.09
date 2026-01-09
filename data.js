@@ -406,26 +406,120 @@ window.SURVEY_DATA = {
       ]
     },
 
+   {
+  id: 3,
+  title: "Prompt 3",
+  questionHeadingTemplate: "Hi {name} — Question 3 of 3",
+  promptBlocks: [
     {
-      id: 3,
-      title: "Prompt 3",
-      questionHeadingTemplate: "Hi {name} — Question 3 of 3",
-      promptBlocks: [
+      type: "text",
+      value: [
+        "Prompt:",
+        "*see attached Image*"
+      ].join("\n")
+    },
+    { type: "image", src: "images/p3.jpg", alt: "Prompt 3 image" }
+  ],
+  responses: [
+    {
+      id: "A",
+      shortLabel: "Response A",
+      contentBlocks: [
         {
           type: "text",
           value: [
-            "Prompt:",
-            "Review the attached photo and provide your response."
-          ].join("\n")
+            "Extracted Image Context: The photo shows a construction worker on an A-frame ladder using one hand to hold onto a ceiling conduit or structural element while performing overhead work with the other hand. There is no visible fall protection in use, and the worker appears to be leaning and reaching while elevated. The work area has exposed utilities and materials scattered on the ground nearby.",
+            "Let me know how you want to proceed.",
+            "(A) Shall I generate the potential hazard table?",
+            "Or",
+            "(B) Would you like to provide any additional clarification to the above image context?",
+            "",
+            "Thank you. Based on the image provided and in accordance with the Turner Corporate Environmental Health and Safety Policy and Building L.I.F.E.® Manual, here is a detailed hazard analysis:"
+          ].join("\n\n")
         },
-        { type: "image", src: "images/p3.jpg", alt: "Prompt 3 image" }
-      ],
-      responses: [
-        { id: "A", shortLabel: "Response A", contentBlocks: [{ type: "text", value: "PASTE RESPONSE A FOR PROMPT 3" }, { type: "image", src: "images/p3rA.jpg", alt: "Response A – Prompt 3 image" }] },
-        { id: "B", shortLabel: "Response B", contentBlocks: [{ type: "text", value: "PASTE RESPONSE B FOR PROMPT 3" }, { type: "image", src: "images/p3rB.jpg", alt: "Response B – Prompt 3 image" }] },
-        { id: "C", shortLabel: "Response C", contentBlocks: [{ type: "text", value: "PASTE RESPONSE C FOR PROMPT 3" }, { type: "image", src: "images/p3rC.jpg", alt: "Response C – Prompt 3 image" }] },
-        { id: "D", shortLabel: "Response D", contentBlocks: [{ type: "text", value: "PASTE RESPONSE D FOR PROMPT 3" }, { type: "image", src: "images/p3rD.jpg", alt: "Response D – Prompt 3 image" }] }
+        { type: "image", src: "images/p3rA.png", alt: "Response A – Prompt 3 image" },
+        {
+          type: "text",
+          value: [
+            "It is your responsibility to always review ChatGPT's response and check with local jurisdictional requirements, project-specific guidelines, and Turner’s Corporate Environmental Health and Safety Policy.",
+            "Would you like a Safety Observation Report based on these observations?",
+            "If yes, please provide the project name, and I’ll generate a downloadable report using the official Turner template."
+          ].join("\n\n")
+        }
+      ]
+    },
+    {
+      id: "B",
+      shortLabel: "Response B",
+      contentBlocks: [
+        {
+          type: "text",
+          value: [
+            "Extracted Image Context:",
+            "The image shows an exterior construction area where two extension ladders are positioned against a corrugated metal wall. One ladder is set at a very steep angle, and the other rests partially inside a guardrail-protected pit. Steel framing is overhead, and the ground is uneven with snow and gravel present. There are multiple unprotected edges and open areas around the ladders.",
+            "Let me know how you want to proceed.",
+            "(A) Shall I generate the potential hazard table?",
+            "(B) Or would you like to provide any additional clarification to the above image context?"
+          ].join("\n\n")
+        },
+        { type: "image", src: "images/p3rB.png", alt: "Response B – Prompt 3 image" },
+        {
+          type: "text",
+          value: [
+            "It is your responsibility to always review ChatGPT's response and check with local jurisdictional requirements, project-specific guidelines, and Turner's Corporate Environmental Health and Safety Policy.",
+            "Would you like a Safety Observation Report based on these observations? If yes, please share the project name and I’ll draft a report using Turner’s template."
+          ].join("\n\n")
+        }
+      ]
+    },
+    {
+      id: "C",
+      shortLabel: "Response C",
+      contentBlocks: [
+        {
+          type: "text",
+          value: [
+            "Extracted Image Context:",
+            "The image shows two extension ladders leaning against a corrugated metal wall and steel beam structure on an active construction site. The ladders appear to be used for access near elevated steel framing and wall penetrations, with uneven ground and temporary guardrails visible below.",
+            "Let me know how you want to proceed.",
+            "(A) Shall I generate the potential hazard table?",
+            "(B) Or would you like to provide any additional clarification to the above image context?",
+            "According to a document from 7/2025, here are the potential hazards observed and the required controls."
+          ].join("\n\n")
+        },
+        { type: "image", src: "images/p3rC.png", alt: "Response C – Prompt 3 image" },
+        {
+          type: "text",
+          value: [
+            "It is your responsibility to always review ChatGPT's response and check with local jurisdictional requirements, project-specific guidelines, and Turner’s Corporate Environmental Health and Safety Policy.",
+            "Would you like a Safety Observation Report based on these observations? If yes, tell me the project name and I’ll generate a downloadable Word document with the photo and the table."
+          ].join("\n\n")
+        }
+      ]
+    },
+    {
+      id: "D",
+      shortLabel: "Response D",
+      contentBlocks: [
+        {
+          type: "text",
+          value: [
+            "Extracted Image Context: The photo shows a steel-framed structure with two extension ladders leaned against a corrugated wall/steel beam area, positioned near an open excavation/edge that is guarded by yellow railings. The ground appears uneven with some snow/ice present, and there are multiple vertical conduits/pipes near the edge where the ladders are set up. (Building L.I.F.E. Instruction Manual, Preface)",
+            "Let me know how you want to proceed. (A) Shall I generate the potential hazard table? Or (B) would you like to provide any additional clarification to the above image context?"
+          ].join("\n\n")
+        },
+        { type: "image", src: "images/p3rD.png", alt: "Response D – Prompt 3 image" },
+        {
+          type: "text",
+          value: [
+            "It is your responsibility to always review ChatGPT's response and check with local jurisdictional requirements, project-specific guidelines, and Turner's Corporate Environmental Health and Safety Policy: Turner EHS Policy.",
+            "Would you like a Safety Observation Report based on these observations? If yes, tell me the project name."
+          ].join("\n\n")
+        }
       ]
     }
+  ]
+},
+
   ]
 };
