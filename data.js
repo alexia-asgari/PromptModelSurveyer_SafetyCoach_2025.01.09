@@ -418,7 +418,7 @@ window.SURVEY_DATA = {
         "*see attached Image*"
       ].join("\n")
     },
-    { type: "image", src: "images/p3.jpg", alt: "Prompt 3 image" }
+    { type: "image", src: "images/p3.png", alt: "Prompt 3 image" }
   ],
   responses: [
     {
